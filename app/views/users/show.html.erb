@@ -1,0 +1,25 @@
+<div><%= @message %></div>
+
+<br><br>
+<!-- displays each user information from a specific query -->
+<%= @user.id %>.
+<%= @user.fname %>
+<%= @user.lname %>,
+<%= @user.username %>,
+<%= @user.email %>,
+<%= @user.password %>
+
+<hr>
+
+<br><br>
+
+<div>Posts by this user:</div>
+
+<% @user_posts.each do |post| %>
+  <%= post.id %>.
+  <!-- path generates a link to http 3000/posts/:id displayed above -->
+  <%= link_to (post.title), post_path(post.id) %>
+  <br><br>
+<% end %>
+Contact GitHub API Training Shop Blog About
+© 2017 GitHub, Inc. Terms Privacy Security Status Help

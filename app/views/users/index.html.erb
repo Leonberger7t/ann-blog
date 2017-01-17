@@ -1,0 +1,18 @@
+
+  <!--  @users refers to User.all-->
+<% @users.each do |user| %>
+  <%= user.id %>.
+  <%= user.fname %>,
+  <%= user.lname %>,
+  <%= user.username %>,
+  <%= user.password %>,
+  <%= user.email %>
+
+  <br><br>
+
+  <!-- path generates a link to http 3000/users/:id displayed above -->
+  <%= link_to ("User show page"), user_path(user.id) %> |
+  <%= link_to 'Delete user',  { action: :destroy, id: user.id }, method: :delete %>
+  <hr>
+
+<% end %>

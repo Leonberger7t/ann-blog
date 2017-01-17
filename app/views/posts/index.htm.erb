@@ -1,0 +1,22 @@
+<h3>All Posts: </h3>
+
+<%= link_to ("Create new post"), new_post_path %>
+
+<br><br>
+
+<!--this loop will show in the browser a list of all posts  -->
+<div class="post_text>"
+  <% @posts.each do |post| %>
+    <%= post.id %>.
+    <%= post.title %> <br>
+    <%= post.content %> <br>
+
+  <br><br>
+
+  <%= link_to ("Post show page"), post_path(post.id), {class: "btn btn-primary"} %>
+  <br><br>
+  <%= link_to 'Delete post', { action: :destroy, id: post.id }, method: :delete %>
+
+
+  <% end %>
+</div>

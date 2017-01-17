@@ -1,0 +1,17 @@
+<h3>Create new post!</h3>
+
+<!--this form allows the user to create a new post in the browser  -->
+<%= form_for Post.new do |f| %>
+  <%= f.label :title %>
+  <%= f.text_field :title %> <br>
+
+  <%= f.label :content %>
+  <%= f.text_field :content %> <br>
+
+  <%= f.label :user %><br>
+  <%= f.collection_select :user_id, User.all, :id, :fname %>
+
+  <br><br>
+
+  <%= f.submit %>
+<% end %>
